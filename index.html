@@ -3,93 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geet Pimple — Quantitative Developer</title>
+    <title>Geet Pimple</title>
     
     <link rel="icon" type="image/png" href="assets/favicon.png">
     
-    <!-- Modern Typography (Inter & JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Main Container -->
     <div class="app-shell">
         
-        <!-- Modern Navigation Header -->
+        <!-- Header with Avatar -->
         <header class="app-header">
             <a href="/" class="brand-logo" data-link>
-                <span class="brand-name">Geet Pimple</span>
-                <span class="brand-status"><span class="status-indicator"></span> Available for Opportunities</span>
+                <img src="assets/avatar.png" alt="Geet Pimple" class="header-avatar" onerror="this.style.display='none'">
+                <div>
+                    <span class="brand-name">Geet Pimple</span>
+                    <span class="brand-status"><span class="status-indicator"></span> Mumbai • SEM 3 IT</span>
+                </div>
             </a>
             
             <nav class="nav-links">
-                <a href="/" class="nav-item active" data-link>Home</a>
+                <a href="/" class="nav-item active" data-link>Index</a>
                 <a href="/projects" class="nav-item" data-link>Projects</a>
-                <a href="/skills" class="nav-item" data-link>Skills</a>
-                <a href="/education" class="nav-item" data-link>Education</a>
-                <a href="assets/resume.pdf" target="_blank" class="nav-item resume-btn">Resume ↗</a>
+                <a href="/skills" class="nav-item" data-link>Stack</a>
+                <a href="/education" class="nav-item" data-link>Edu</a>
+                <a href="assets/resume.pdf" target="_blank" class="nav-item resume-btn">CV ↗</a>
             </nav>
         </header>
 
-        <!-- Dynamic Content Router Views -->
+        <!-- Main Router -->
         <main id="app-router">
             
-            <!-- VIEW: HOME (Default Intro Page) -->
+            <!-- VIEW: HOME -->
             <section id="view-home" class="page-view active">
-                <div class="hero-section">
-                    <div class="hero-badge">Quant & Systems Engineering</div>
-                    <h1 class="hero-title">Building high-performance systems and low-latency tools.</h1>
-                    <p class="hero-description">
-                        I'm an Information Technology student focused on low-latency systems, quantitative trading fundamentals, signal processing at Atharva Satellite Ground Station, and competitive programming.
-                    </p>
+                <div class="hero-layout">
+                    <div class="hero-main">
+                        <h1 class="hero-title">Working on C++, SDR telemetry, and market microstructure basics.</h1>
+                        <p class="hero-description">
+                            IT undergraduate at Mumbai University. Spend most of my time doing competitive programming, hacking on C++ utilities for Atharva Satellite Ground Station, and studying low-latency system design.
+                        </p>
+                        
+                        <div class="quick-links">
+                            <a href="https://github.com/anon-atharva" target="_blank" class="raw-link">GitHub @anon-atharva ↗</a>
+                            <a href="https://rentry.co/geet" target="_blank" class="raw-link">Rentry / Personal Readme ↗</a>
+                        </div>
+                    </div>
                     
-                    <div class="hero-actions">
-                        <a href="/projects" class="btn btn-primary-custom" data-link>View Projects</a>
-                        <a href="https://rentry.co/geet" target="_blank" class="btn btn-secondary-custom">Personal Readme ↗</a>
+                    <div class="hero-profile-side">
+                        <img src="assets/avatar.png" alt="Geet Avatar" class="hero-avatar" onerror="this.src='https://via.placeholder.com/120'">
+                        <div class="profile-meta">
+                            <span class="meta-label">Focus</span>
+                            <span class="meta-val">Quant Dev & Low-Level</span>
+                            <span class="meta-label">Ground Station</span>
+                            <span class="meta-val">ASGS Junior Dev</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="home-grid">
-                    <!-- Now Playing Card -->
-                    <div class="glass-card now-playing-card">
-                        <div class="card-label">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-                            Live Audio Feed
-                        </div>
-                        <div class="track-details">
-                            <div class="album-art-glow"></div>
-                            <div>
-                                <div class="track-title" id="trackName">Loading...</div>
-                                <div class="artist-name" id="artistName">Last.fm</div>
+                <div class="deck-grid">
+                    <!-- Live Audio Widget -->
+                    <div class="deck-card">
+                        <div class="card-tag"># listening</div>
+                        <div class="track-row">
+                            <div class="track-info">
+                                <div class="track-title" id="trackName">Rotating tracks...</div>
+                                <div class="artist-name" id="artistName">Last.fm sync</div>
                             </div>
                         </div>
-                        <div class="track-meta">
-                            <span>Total Scrobbles: <strong id="scrobbleCount">142,890</strong></span>
+                        <div class="track-foot">
+                            <span>Scrobbles: <strong id="scrobbleCount">142,890</strong></span>
                         </div>
                     </div>
 
-                    <!-- Quick Contact Card -->
-                    <div class="glass-card contact-card">
-                        <div class="card-label">Direct Contact</div>
-                        <form action="mailto:geetpimple-inft@atharvacoe.ac.in" method="post" enctype="text/plain" class="modern-form">
-                            <div class="row g-2 mb-2">
-                                <div class="col-6">
-                                    <input type="text" name="name" class="modern-input" placeholder="Name" required>
-                                </div>
-                                <div class="col-6">
-                                    <input type="email" name="email" class="modern-input" placeholder="Email" required>
-                                </div>
-                            </div>
-                            <div class="mb-2">
-                                <textarea name="message" class="modern-input" rows="2" placeholder="Message..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary-custom w-100 btn-sm">Send Email</button>
+                    <!-- Direct Message Form -->
+                    <div class="deck-card">
+                        <div class="card-tag"># mail</div>
+                        <form action="mailto:geetpimple-inft@atharvacoe.ac.in" method="post" enctype="text/plain" class="raw-form">
+                            <input type="text" name="name" class="raw-input" placeholder="Name" required>
+                            <input type="email" name="email" class="raw-input" placeholder="Email" required>
+                            <textarea name="message" class="raw-input" rows="2" placeholder="Message..." required></textarea>
+                            <button type="submit" class="raw-btn">Send Email</button>
                         </form>
                     </div>
                 </div>
@@ -98,58 +97,41 @@
             <!-- VIEW: PROJECTS -->
             <section id="view-projects" class="page-view">
                 <div class="page-header">
-                    <h2>Featured Projects</h2>
-                    <p class="text-muted">A collection of open-source tools, interfaces, and systems software.</p>
+                    <h2>Projects</h2>
+                    <p class="section-sub">Tools, experiments, and codebases I'm maintaining.</p>
                 </div>
 
-                <div class="projects-grid">
-                    <div class="project-glass-card">
-                        <div class="project-header">
-                            <h3>Flashcards Timetable</h3>
-                            <a href="https://github.com/anon-atharva/timecards-athv" target="_blank" class="icon-link">↗</a>
+                <div class="list-stack">
+                    <div class="list-item">
+                        <div class="list-head">
+                            <a href="https://github.com/anon-atharva/timecards-athv" target="_blank" class="item-title">timecards-athv ↗</a>
+                            <span class="item-tag">React / Tailwind</span>
                         </div>
-                        <p>An attempt to make a flashcard-based timetable organiser built with modern reactive state management.</p>
-                        <div class="tech-stack-row">
-                            <span class="tech-pill">React.js</span>
-                            <span class="tech-pill">Tailwind CSS</span>
-                        </div>
+                        <p class="item-desc">Flashcard-style schedule planner attempting to replace standard tabular timetables.</p>
                     </div>
 
-                    <div class="project-glass-card">
-                        <div class="project-header">
-                            <h3>Interactive Map Website</h3>
-                            <a href="https://github.com/anon-atharva/athvmap" target="_blank" class="icon-link">↗</a>
+                    <div class="list-item">
+                        <div class="list-head">
+                            <a href="https://github.com/anon-atharva/athvmap" target="_blank" class="item-title">athvmap ↗</a>
+                            <span class="item-tag">Leaflet / JS</span>
                         </div>
-                        <p>Interactive spatial map tool implementing pin-based navigation and route exploration.</p>
-                        <div class="tech-stack-row">
-                            <span class="tech-pill">Leaflet.js</span>
-                            <span class="tech-pill">JavaScript ES6</span>
-                        </div>
+                        <p class="item-desc">Custom interactive spatial pin mapping tool built without heavy client frameworks.</p>
                     </div>
 
-                    <div class="project-glass-card">
-                        <div class="project-header">
-                            <h3>Quantlib</h3>
-                            <a href="https://github.com/anon-atharva/quantlib-fsjp" target="_blank" class="icon-link">↗</a>
+                    <div class="list-item">
+                        <div class="list-head">
+                            <a href="https://github.com/anon-atharva/quantlib-fsjp" target="_blank" class="item-title">quantlib-fsjp ↗</a>
+                            <span class="item-tag">C++ / Algorithms</span>
                         </div>
-                        <p>A repository of algorithms, mathematical models, and competitive programming snippets for quantitative trading.</p>
-                        <div class="tech-stack-row">
-                            <span class="tech-pill">C++20</span>
-                            <span class="tech-pill">Algorithms</span>
-                        </div>
+                        <p class="item-desc">Reference repo collecting algorithms, competitive programming snippets, and quant math notes.</p>
                     </div>
 
-                    <div class="project-glass-card">
-                        <div class="project-header">
-                            <h3>CanSat Telemetry System</h3>
-                            <a href="https://github.com/ASGSxCODE/cansat_telemetry" target="_blank" class="icon-link">↗</a>
+                    <div class="list-item">
+                        <div class="list-head">
+                            <a href="https://github.com/ASGSxCODE/cansat_telemetry" target="_blank" class="item-title">cansat_telemetry ↗</a>
+                            <span class="item-tag">WebSockets / Chart.js</span>
                         </div>
-                        <p>High-frequency real-time telemetry rendering dashboard for the Atharva Satellite Ground Station.</p>
-                        <div class="tech-stack-row">
-                            <span class="tech-pill">WebSockets</span>
-                            <span class="tech-pill">Chart.js</span>
-                            <span class="tech-pill">C++ Systems</span>
-                        </div>
+                        <p class="item-desc">Real-time telemetry stream analyzer for the Atharva Satellite Ground Station Cansat project.</p>
                     </div>
                 </div>
             </section>
@@ -157,41 +139,38 @@
             <!-- VIEW: SKILLS -->
             <section id="view-skills" class="page-view">
                 <div class="page-header">
-                    <h2>Technical Proficiency</h2>
-                    <p class="text-muted">Core competencies in low-level programming, data structures, and web technologies.</p>
+                    <h2>Stack & Tools</h2>
+                    <p class="section-sub">Languages and tools I use daily.</p>
                 </div>
 
-                <div class="skills-grid">
-                    <div class="skill-category-card">
-                        <h4>Systems & Core Languages</h4>
-                        <p class="category-desc">Performance-driven software development and low-latency concepts.</p>
-                        <div class="skills-flex">
-                            <span class="skill-badge">C++17/20</span>
-                            <span class="skill-badge">Data Structures & Algorithms</span>
-                            <span class="skill-badge">Competitive Programming</span>
-                            <span class="skill-badge">Software Defined Radio (SDR)</span>
+                <div class="stack-blocks">
+                    <div class="stack-row">
+                        <div class="stack-label">Core & Systems</div>
+                        <div class="stack-tags">
+                            <code>C++17/20</code>
+                            <code>STL</code>
+                            <code>Algorithms</code>
+                            <code>SDR</code>
+                            <code>DSP Basics</code>
                         </div>
                     </div>
-
-                    <div class="skill-category-card">
-                        <h4>Frontend & Visualization</h4>
-                        <p class="category-desc">Building responsive, accessible web dashboards and tooling.</p>
-                        <div class="skills-flex">
-                            <span class="skill-badge">HTML5 / Modern CSS</span>
-                            <span class="skill-badge">JavaScript (ES6+)</span>
-                            <span class="skill-badge">Bootstrap 5</span>
-                            <span class="skill-badge">Chart.js</span>
+                    <div class="stack-row">
+                        <div class="stack-label">Web & Telemetry</div>
+                        <div class="stack-tags">
+                            <code>JavaScript</code>
+                            <code>WebSockets</code>
+                            <code>Chart.js</code>
+                            <code>HTML/CSS</code>
+                            <code>Bootstrap 5</code>
                         </div>
                     </div>
-
-                    <div class="skill-category-card">
-                        <h4>Tools & Infrastructure</h4>
-                        <p class="category-desc">Version control and telemetry hardware interfaces.</p>
-                        <div class="skills-flex">
-                            <span class="skill-badge">Git & GitHub</span>
-                            <span class="skill-badge">WebSockets</span>
-                            <span class="skill-badge">Signal Processing</span>
-                            <span class="skill-badge">GitHub Pages</span>
+                    <div class="stack-row">
+                        <div class="stack-label">Workflow</div>
+                        <div class="stack-tags">
+                            <code>Git</code>
+                            <code>GitHub Actions</code>
+                            <code>Linux CLI</code>
+                            <code>Rentry</code>
                         </div>
                     </div>
                 </div>
@@ -200,28 +179,23 @@
             <!-- VIEW: EDUCATION -->
             <section id="view-education" class="page-view">
                 <div class="page-header">
-                    <h2>Education & Background</h2>
-                    <p class="text-muted">Academic history and active organization involvements.</p>
+                    <h2>Education & Work</h2>
                 </div>
 
-                <div class="timeline-container">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">Present • Semester 3</span>
-                            <h3 class="timeline-title">B.E. in Information Technology</h3>
-                            <h4 class="timeline-subtitle">Mumbai University</h4>
-                            <p class="timeline-grade">Current Score: <strong>8.72 CGPA</strong></p>
+                <div class="edu-block">
+                    <div class="edu-row">
+                        <div>
+                            <div class="edu-title">B.E. Information Technology</div>
+                            <div class="edu-sub">Mumbai University • Semester 3</div>
                         </div>
+                        <div class="edu-stat">8.72 CGPA</div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">Active Member</span>
-                            <h3 class="timeline-title">Atharva Satellite Ground Station (ASGS)</h3>
-                            <h4 class="timeline-subtitle">Junior Developer</h4>
-                            <p class="timeline-desc">Working on signal reception telemetry systems, ground station interface software, and software-defined radio communications.</p>
+                    <div class="edu-row mt-4">
+                        <div>
+                            <div class="edu-title">Atharva Satellite Ground Station (ASGS)</div>
+                            <div class="edu-sub">Junior Developer</div>
+                            <p class="edu-desc">Assisting with ground telemetry UI, WebSocket feeds, and data processing pipelines.</p>
                         </div>
                     </div>
                 </div>
@@ -229,13 +203,11 @@
 
         </main>
 
-        <!-- Modern Clean Footer -->
         <footer class="app-footer">
-            <span>© 2026 Geet Pimple</span>
+            <span>Geet Pimple • 2026</span>
             <div class="footer-links">
-                <a href="https://github.com/anon-atharva" target="_blank">GitHub</a>
-                <a href="https://github.com/happi0456" target="_blank">GitHub Alt</a>
-                <a href="https://rentry.co/geet" target="_blank">Readme</a>
+                <a href="https://github.com/anon-atharva" target="_blank">github/anon-atharva</a>
+                <a href="https://github.com/happi0456" target="_blank">github/happi0456</a>
             </div>
         </footer>
 
