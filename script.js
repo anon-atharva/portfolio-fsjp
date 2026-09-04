@@ -1,9 +1,12 @@
-// --- Client-side Router for Subpages ---
+// GitHub Pages Repo Router Configuration
+const BASE_PATH = '/portfolio-fsjp';
+
 const routes = {
-    '/': 'view-home',
-    '/projects': 'view-projects',
-    '/skills': 'view-skills',
-    '/education': 'view-education'
+    [BASE_PATH]: 'view-home',
+    [`${BASE_PATH}/`]: 'view-home',
+    [`${BASE_PATH}/projects`]: 'view-projects',
+    [`${BASE_PATH}/skills`]: 'view-skills',
+    [`${BASE_PATH}/education`]: 'view-education'
 };
 
 function navigateTo(url) {
@@ -12,7 +15,13 @@ function navigateTo(url) {
 }
 
 function router() {
-    const path = window.location.pathname;
+    let path = window.location.pathname;
+    
+    // Remove trailing slash if present for consistency (except root)
+    if (path.length > BASE_PATH.length + 1 && path.endsWith('/')) {
+        path = path.slice(0, -1);
+    }
+
     const viewId = routes[path] || 'view-home';
 
     // Hide all view sections
@@ -20,38 +29,37 @@ function router() {
         view.classList.remove('active');
     });
 
-    // Show the requested view section
+    // Show active view section
     const activeView = document.getElementById(viewId);
     if (activeView) {
         activeView.classList.add('active');
     }
 
-    // Update active state in header navigation links
+    // Update nav highlighted state
     document.querySelectorAll('.nav-links .nav-item').forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === path) {
+        const href = link.getAttribute('href');
+        if (href === path || (path === `${BASE_PATH}/` && href === BASE_PATH)) {
             link.classList.add('active');
         }
     });
 }
 
-// Intercept link clicks for smooth SPA navigation
+// Intercept link clicks
 document.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('click', e => {
-        if (e.target.matches('[data-link]')) {
+        const link = e.target.closest('[data-link]');
+        if (link) {
             e.preventDefault();
-            navigateTo(e.target.getAttribute('href'));
+            navigateTo(link.getAttribute('href'));
         }
     });
 
-    // Handle browser back/forward buttons
     window.addEventListener('popstate', router);
-    
-    // Initial route resolve
     router();
 });
 
-// --- Last.fm Track Rotation ---
+// Last.fm track rotation
 const tracklist = [
     { track: "Vordhosbn", artist: "Aphex Twin" },
     { track: "Alison", artist: "Slowdive" },
