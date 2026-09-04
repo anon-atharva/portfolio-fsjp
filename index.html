@@ -3,153 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/mu/ - Music Portfolio</title>
+    <title>SDR & Systems Portfolio</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts for retro/tech aesthetic -->
-    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Retro Mono Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="py-4">
 
-    <!-- Header / Banner -->
-    <header class="container my-3 text-center">
-        <h1 class="chan-title">/mu/ - Music & Web Dev</h1>
-        <div class="chan-subtitle">Welcome to my portfolio. Anonymous user #8492041</div>
-    </header>
+    <div class="container" style="max-width: 900px;">
+        
+        <!-- Header / Navigation Bar -->
+        <header class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom border-secondary">
+            <div>
+                <h1 class="h3 fw-bold mb-0 text-white">[Geet Pimple]</h1>
+                <span class="text-secondary small">Learning about Low Latency Systems & Quantative trading</span>
+            </div>
+            <!-- Navigation & Links -->
+            <nav class="d-flex gap-3">
+                <a href="https://yourpersonalwebsite.com" target="_blank" class="nav-link-custom">Personal Site ↗</a>
+                <a href="https://github.com/anon-atharva" target="_blank" class="nav-link-custom">GitHub ↗</a>
+                <a href="https://github.com/happi0456" target="_blank" class="nav-link-custom">GitHub2 ↗</a>
+                <a href="assets/resume.pdf" download class="nav-link-custom">Resume.PDF</a>
+            </nav>
+        </header>
 
-    <div class="container main-layout">
-        <div class="row g-3">
+        <div class="row g-4">
             
-            <!-- Left Sidebar: Soulseek / Last.fm Widget -->
-            <div class="col-md-4">
+            <!-- Left Column: Media Player Widgets & Contact -->
+            <div class="col-md-5">
                 
-                <!-- Soulseek Status Window -->
-                <div class="win-card mb-3">
-                    <div class="win-title-bar">
-                        <span>SoulseekQt v2026.1 - User: anon_dev</span>
-                        <span class="win-controls">_ □ X</span>
+                <!-- Last.fm Live Scrobbler Widget (Theme Component) -->
+                <div class="player-card mb-3">
+                    <div class="player-header d-flex justify-content-between align-items-center">
+                        <span>NOW_PLAYING.EXE</span>
+                        <span class="status-dot"></span>
                     </div>
-                    <div class="win-body">
-                        <div class="d-flex align-items-center gap-2 mb-2">
-                            <span class="status-indicator online"></span>
-                            <strong>Status:</strong> Online (Sharing 14,203 files)
-                        </div>
-                        <p class="small mb-1"><strong>Upload Speed:</strong> 1.2 MB/s</p>
-                        <p class="small mb-0"><strong>Queue:</strong> 0 files in line</p>
-                    </div>
-                </div>
-
-                <!-- Last.fm Now Playing Widget -->
-                <div class="lastfm-card mb-3">
-                    <div class="lastfm-header d-flex justify-content-between align-items-center">
-                        <span>LAST.FM SCROBBLES</span>
-                        <span class="badge bg-danger">LIVE</span>
-                    </div>
-                    <div class="lastfm-body p-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="album-art"></div>
+                    <div class="p-3">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="album-art-placeholder"></div>
                             <div>
-                                <div class="scrobble-title">Currently Scrobbling</div>
-                                <div class="track-name" id="trackName">Untitled Track</div>
-                                <div class="artist-name" id="artistName">Unknown Artist</div>
+                                <div class="track-title" id="trackName">Track Title</div>
+                                <div class="artist-name text-secondary" id="artistName">Artist</div>
                             </div>
                         </div>
-                        <div class="mt-3 pt-2 border-top border-secondary small">
-                            Total Scrobbles: <strong id="scrobbleCount">142,890</strong>
+                        <div class="progress mb-2" style="height: 4px; background-color: #333;">
+                            <div class="progress-bar bg-danger" style="width: 65%;"></div>
+                        </div>
+                        <div class="d-flex justify-content-between text-secondary extra-small">
+                            <span>Scrobbles: <strong class="text-white" id="scrobbleCount">142,890</strong></span>
+                            <span>Source: Last.fm</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="chan-post p-3">
-                    <div class="post-header mb-2">
-                        <span class="poster-name">Anonymous</span> 
-                        <span class="post-date">09/04/26(Fri)13:05</span>
-                        <span class="post-number">No.948201</span>
+                <!-- Soulseek Network Node (Theme Component) -->
+                <div class="slsk-card mb-3 p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <strong class="text-white">Node Status</strong>
+                        <span class="badge bg-success text-dark">ONLINE</span>
                     </div>
-                    <h5>Contact / P2P Request</h5>
-                    <form onsubmit="event.preventDefault(); alert('Message queued for upload!');">
+                    <ul class="list-unstyled small mb-0 text-secondary">
+                        <li>• Target: <span class="text-white">QO-100 Transponder</span></li>
+                        <li>• Subsystem: <span class="text-white">Tx/Rx Ground Station</span></li>
+                        <li>• Status: <span class="text-white">Listening / Processing...</span></li>
+                    </ul>
+                </div>
+
+                <!-- Functional Contact Form -->
+                <div class="player-card p-3">
+                    <h6 class="text-white mb-3">> Direct Contact Form</h6>
+                    <form action="mailto:geetpimple-inft@atharvacoe.ac.in" method="post" enctype="text/plain">
                         <div class="mb-2">
-                            <input type="text" class="form-control form-control-sm chan-input" placeholder="Name / Handle" required>
+                            <input type="text" name="name" class="form-control form-control-sm dark-input" placeholder="Your Name" required>
                         </div>
                         <div class="mb-2">
-                            <input type="email" class="form-control form-control-sm chan-input" placeholder="Email" required>
+                            <input type="email" name="email" class="form-control form-control-sm dark-input" placeholder="Your Email" required>
                         </div>
                         <div class="mb-2">
-                            <textarea class="form-control form-control-sm chan-input" rows="3" placeholder="Message / File request..." required></textarea>
+                            <textarea name="message" class="form-control form-control-sm dark-input" rows="3" placeholder="Message..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-sm chan-btn w-100">Post Message</button>
+                        <button type="submit" class="btn btn-sm action-btn w-100">Send Message</button>
                     </form>
                 </div>
 
             </div>
 
-            <!-- Right Main Area: /mu/ Thread Style Content -->
-            <div class="col-md-8">
+            <!-- Right Column: Profile, Education, Stack & Projects -->
+            <div class="col-md-7">
                 
-                <!-- About Me (Thread OP) -->
-                <div class="chan-post op-post p-3 mb-3">
-                    <div class="post-header mb-2">
-                        <span class="subject">About Me / Portfolio Thread</span> 
-                        <span class="poster-name">Anon Dev</span> 
-                        <span class="post-date">09/04/26(Fri)13:00</span> 
-                        <span class="post-number">No.948200</span>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 mb-2">
-                            <div class="op-image-placeholder">
-                                [File: portfolio.jpg]<br>
-                                250x250 PNG, 42KB
-                            </div>
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="greentext">>be me</p>
-                            <p class="greentext">>building web tools and exploring niche audio archives</p>
-                            <p class="greentext">>frontend stack: HTML, CSS, Bootstrap, JS</p>
-                            <p>Full-stack developer with a passion for web audio engines, retro net aesthetics, and cataloging underground music genres. Welcome to my thread.</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- About Me -->
+                <section class="content-block p-3 mb-3">
+                    <h5 class="text-white mb-2">/ About Me</h5>
+                    <p class="text-secondary mb-0">
+                        Focusing on competitive programming, junior level development for Atharva Satellite Ground Station and core mathematics. Visit my <a href="https://rentry.co/geet" target="_blank" class="small-link">Personal Readme ↗</a> for notes on my interests.
+                    </p>
+                </section>
 
-                <!-- Skills Section -->
-                <div class="chan-post p-3 mb-3">
-                    <div class="post-header mb-2">
-                        <span class="poster-name">Anonymous</span> 
-                        <span class="post-date">09/04/26(Fri)13:02</span>
-                        <span class="post-number">No.948202</span>
+                <!-- Education Section -->
+                <section class="content-block p-3 mb-3">
+                    <h5 class="text-white mb-3">/ Education</h5>
+                    <div class="mb-2">
+                        <div class="d-flex justify-content-between">
+                            <strong class="text-white">B.E. in Information Technology [8.72 CGPA]</strong>
+                            <span class="text-secondary small">Semester 3</span>
+                        </div>
+                        <span class="text-secondary small">Mumbai University</span>
                     </div>
-                    <h5>Technical Skills</h5>
-                    <div class="d-flex flex-wrap gap-2 mt-2">
-                        <span class="skill-tag">[HTML5 / Semantic Markup]</span>
-                        <span class="skill-tag">[CSS3 / Retro UI Design]</span>
-                        <span class="skill-tag">[Bootstrap 5]</span>
-                        <span class="skill-tag">[JavaScript / Web Audio API]</span>
-                        <span class="skill-tag">[Git / GitHub Pages]</span>
-                    </div>
-                </div>
+                </section>
 
-                <!-- Featured Projects -->
-                <div class="chan-post p-3 mb-3">
-                    <div class="post-header mb-2">
-                        <span class="poster-name">Anonymous</span> 
-                        <span class="post-date">09/04/26(Fri)13:04</span>
-                        <span class="post-number">No.948203</span>
+                <!-- Technical Skills -->
+                <section class="content-block p-3 mb-3">
+                    <h5 class="text-white mb-3">/ Technical Skills</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="tech-tag">C++ / Algorithms</span>
+                        <span class="tech-tag">SDR / Signal Processing</span>
+                        <span class="tech-tag">HTML5 / CSS3</span>
+                        <span class="tech-tag">Bootstrap 5</span>
+                        <span class="tech-tag">Git / GitHub Pages</span>
                     </div>
-                    <h5>Featured Projects</h5>
+                </section>
+
+                <!-- Featured Projects (4 Projects) -->
+                <section class="content-block p-3">
+                    <h5 class="text-white mb-3">/ Featured Projects</h5>
                     
-                    <div class="project-entry my-2 p-2">
-                        <h6>> Project_01: MP3 Metatag Batch Editor</h6>
-                        <p class="small mb-1">A lightweight browser-based ID3 tag editor built with JavaScript and Web APIs.</p>
-                        <span class="badge bg-secondary">JavaScript</span> <span class="badge bg-secondary">ID3 API</span>
+                    <!-- Project 1 -->
+                    <div class="project-card p-3 mb-2">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="text-white mb-1">Flashcards based timetable website.</h6>
+                            <a href="https://github.com/anon-atharva/timecards-athv" target="_blank" class="small-link">Repo ↗</a>
+                        </div>
+                        <p class="text-secondary small mb-2">An attempt to make a flashcard based timetable organiser</p>
+                        <span class="badge bg-dark border border-secondary">React.js and Tailwind CSS with LocalStorage for an interactive, card-based schedule UI.</span>
                     </div>
 
-                    <div class="project-entry my-2 p-2">
-                        <h6>> Project_02: Niche Chart Generator</h6>
-                        <p class="small mb-1">Generates custom 3x3 album grid charts modeled after classic board discussion threads.</p>
-                        <span class="badge bg-secondary">Bootstrap</span> <span class="badge bg-secondary">HTML Canvas</span>
+                    <!-- Project 2 -->
+                    <div class="project-card p-3 mb-2">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="text-white mb-1">Simple Map Website</h6>
+                            <a href="https://github.com/anon-atharva/athvmap" target="_blank" class="small-link">Live Demo ↗</a>
+                        </div>
+                        <p class="text-secondary small mb-2">This website tried to implement a pin based map approach.</p>
+                        <span class="badge bg-dark border border-secondary">Leaflet.js and vanilla JavaScript for lightweight, custom pin-dropping capabilities.</span>
                     </div>
-                </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card p-3 mb-2">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="text-white mb-1">Quantlib</h6>
+                            <a href="https://github.com/anon-atharva/quantlib-fsjp" target="_blank" class="small-link">Repo ↗</a>
+                        </div>
+                        <p class="text-secondary small mb-2">A simple resource website for knowledge on quantative trading with regards from competitive programming..</p>
+                        <span class="badge bg-dark border border-secondary">Docusaurus for documentation paired with C++ code snippets for algorithmic trading resources.</span>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card p-3">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="text-white mb-1">Telemetry website</h6>
+                            <a href="hhttps://github.com/ASGSxCODE/cansat_telemetry" target="_blank" class="small-link">Live Demo ↗</a>
+                        </div>
+                        <p class="text-secondary small mb-2">A basic website to analyse cansat telemetry data as part of Atharva Satellite Ground Station using low latency systems</p>
+                        <span class="badge bg-dark border border-secondary">HTML, CSS, JavaScript, and Chart.js utilizing WebSockets for real-time low-latency sensor data streaming.</span>
+                    </div>
+
+                </section>
 
             </div>
 
