@@ -1,164 +1,104 @@
 body {
-    background-color: #eef2f7;
-    color: #000000;
+    background-color: #121214;
+    color: #e1e1e6;
     font-family: 'Fira Code', monospace;
     font-size: 13px;
 }
 
-.chan-title {
-    color: #af0a0f;
-    font-family: 'VT323', monospace;
-    font-size: 2.8rem;
-    margin-bottom: 0;
-}
-
-.chan-subtitle {
-    color: #707070;
+.nav-link-custom {
+    color: #a0a0a0;
+    text-decoration: none;
     font-size: 0.85rem;
+    transition: color 0.2s;
 }
 
-/* Board Post Styling */
-.chan-post {
-    background-color: #d6daf0;
-    border: 1px solid #b7c5d9;
-    border-radius: 2px;
+.nav-link-custom:hover {
+    color: #00ff66;
 }
 
-.op-post {
-    background-color: #d6daf0;
-    border: 1px solid #b7c5d9;
-}
-
-.post-header {
-    font-size: 0.8rem;
-    border-bottom: 1px solid #b7c5d9;
-    padding-bottom: 4px;
-}
-
-.poster-name {
-    color: #117743;
-    font-weight: bold;
-}
-
-.subject {
-    color: #0f0c5d;
-    font-weight: bold;
-}
-
-.post-number, .post-date {
-    color: #444;
-}
-
-.greentext {
-    color: #789922;
-    margin-bottom: 2px;
-}
-
-.op-image-placeholder {
-    background: #b7c5d9;
-    border: 1px dashed #707070;
-    padding: 10px;
-    font-size: 0.7rem;
-    text-align: center;
-}
-
-/* Soulseek Window Styling */
-.win-card {
-    background: #c0c0c0;
-    border: 2px solid #ffffff;
-    border-right-color: #000000;
-    border-bottom-color: #000000;
-    font-family: sans-serif;
-    font-size: 12px;
-}
-
-.win-title-bar {
-    background: #000080;
-    color: white;
-    padding: 3px 6px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-}
-
-.win-body {
-    padding: 8px;
-    background: #d4d0c8;
-}
-
-.status-indicator.online {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #00ff00;
-    border-radius: 50%;
-    border: 1px solid #000;
-}
-
-/* Last.fm Dark Component */
-.lastfm-card {
-    background-color: #111111;
-    color: #ffffff;
-    border-left: 4px solid #d51007;
+/* Player & Card Styling */
+.player-card, .slsk-card, .content-block {
+    background-color: #1a1a1e;
+    border: 1px solid #2d2d32;
     border-radius: 4px;
 }
 
-.lastfm-header {
-    background-color: #222222;
+.player-header {
+    background-color: #242429;
     padding: 6px 12px;
     font-size: 0.75rem;
-    font-weight: bold;
+    color: #a0a0a0;
+    border-bottom: 1px solid #2d2d32;
 }
 
-.album-art {
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #d51007;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.album-art-placeholder {
     width: 48px;
     height: 48px;
-    background-color: #333;
-    border: 1px solid #555;
-    background-image: linear-gradient(45deg, #222 25%, transparent 25%), linear-gradient(-45deg, #222 25%, transparent 25%);
-    background-size: 8px 8px;
+    background: #2a2a30;
+    border: 1px solid #3d3d44;
 }
 
-.track-name {
-    font-weight: bold;
-    color: #ffffff;
+.extra-small {
+    font-size: 0.7rem;
 }
 
-.artist-name {
-    color: #aaaaaa;
-    font-size: 0.85rem;
-}
-
-/* Form & Interactive Elements */
-.chan-input {
-    background-color: #ffffff;
-    border: 1px solid #aaa;
-    border-radius: 0;
+/* Forms & Inputs */
+.dark-input {
+    background-color: #121214;
+    border: 1px solid #2d2d32;
+    color: #fff;
+    font-size: 0.8rem;
     font-family: inherit;
+}
+
+.dark-input:focus {
+    background-color: #121214;
+    border-color: #00ff66;
+    color: #fff;
+    box-shadow: none;
+}
+
+.action-btn {
+    background-color: #2d2d32;
+    color: #fff;
+    border: 1px solid #404048;
     font-size: 0.8rem;
 }
 
-.chan-btn {
-    background-color: #b7c5d9;
-    border: 1px solid #000;
-    border-radius: 0;
-    font-weight: bold;
-    font-size: 0.8rem;
+.action-btn:hover {
+    background-color: #00ff66;
+    color: #000;
 }
 
-.chan-btn:hover {
-    background-color: #a2b4ce;
-}
-
-.skill-tag {
-    background-color: #eef2f7;
-    border: 1px solid #b7c5d9;
-    padding: 2px 6px;
+/* Tags & Project Cards */
+.tech-tag {
+    background-color: #242429;
+    border: 1px solid #3a3a42;
+    padding: 3px 8px;
     font-size: 0.75rem;
-    color: #0f0c5d;
+    color: #00ff66;
 }
 
-.project-entry {
-    background-color: #eef2f7;
-    border-left: 3px solid #af0a0f;
+.project-card {
+    background-color: #121214;
+    border: 1px solid #2d2d32;
+    border-left: 3px solid #00ff66;
+}
+
+.small-link {
+    color: #00ff66;
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
+.small-link:hover {
+    text-decoration: underline;
 }
