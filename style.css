@@ -35,7 +35,7 @@ body {
     font-size: 13px;
 }
 
-/* Header & Links */
+/* Header & Typography Overrides */
 h1, .text-white {
     color: var(--ctp-text) !important;
 }
@@ -55,8 +55,8 @@ h1, .text-white {
     color: var(--ctp-red);
 }
 
-/* Player & Card Styling */
-.player-card, .slsk-card, .content-block {
+/* Player & Card Components */
+.player-card, .content-block {
     background-color: var(--ctp-mantle);
     border: 1px solid var(--ctp-surface1);
     border-radius: 6px;
@@ -89,7 +89,7 @@ h1, .text-white {
     background-color: var(--ctp-red) !important;
 }
 
-/* Forms & Inputs */
+/* Input Fields & Forms */
 .dark-input {
     background-color: var(--ctp-base);
     border: 1px solid var(--ctp-surface1);
@@ -120,12 +120,6 @@ h1, .text-white {
 .action-btn:hover {
     background-color: var(--ctp-maroon);
     color: var(--ctp-base);
-}
-
-/* Soulseek Badge Overrides */
-.badge.bg-success {
-    background-color: var(--ctp-green) !important;
-    color: var(--ctp-base) !important;
 }
 
 /* Tags & Project Cards */

@@ -1,27 +1,29 @@
-// Simulated Last.fm track rotation to give a live music vibe
+// Simulated Last.fm track rotation to fit the retro audio interface vibe
 const tracklist = [
-    { track: "Untitled 13", artist: "Aphex Twin" },
-    { track: "Alison", artist: "Slowdive" },
     { track: "Vordhosbn", artist: "Aphex Twin" },
-    { track: "Aerodynamic", artist: "Daft Punk" },
-    { track: "Disorder", artist: "Joy Division" }
+    { track: "Alison", artist: "Slowdive" },
+    { track: "Disorder", artist: "Joy Division" },
+    { track: "Archangel", artist: "Burial" }
 ];
 
-let currentIndex = 0;
+let index = 0;
 let scrobbles = 142890;
 
-function updateScrobble() {
-    const current = tracklist[currentIndex];
-    document.getElementById('trackName').innerText = current.track;
-    document.getElementById('artistName').innerText = current.artist;
-    
-    // Simulate scrobble count tick
-    scrobbles += 1;
-    document.getElementById('scrobbleCount').innerText = scrobbles.toLocaleString();
-    
-    currentIndex = (currentIndex + 1) % tracklist.length;
+function rotateTrack() {
+    const trackElement = document.getElementById('trackName');
+    const artistElement = document.getElementById('artistName');
+    const scrobbleElement = document.getElementById('scrobbleCount');
+
+    if (trackElement && artistElement && scrobbleElement) {
+        trackElement.innerText = tracklist[index].track;
+        artistElement.innerText = tracklist[index].artist;
+
+        scrobbles += 1;
+        scrobbleElement.innerText = scrobbles.toLocaleString();
+
+        index = (index + 1) % tracklist.length;
+    }
 }
 
-// Initial set and interval change every 8 seconds
-updateScrobble();
-setInterval(updateScrobble, 8000);
+rotateTrack();
+setInterval(rotateTrack, 7000);
