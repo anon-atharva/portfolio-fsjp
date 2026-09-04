@@ -1,0 +1,164 @@
+body {
+    background-color: #eef2f7;
+    color: #000000;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+}
+
+.chan-title {
+    color: #af0a0f;
+    font-family: 'VT323', monospace;
+    font-size: 2.8rem;
+    margin-bottom: 0;
+}
+
+.chan-subtitle {
+    color: #707070;
+    font-size: 0.85rem;
+}
+
+/* Board Post Styling */
+.chan-post {
+    background-color: #d6daf0;
+    border: 1px solid #b7c5d9;
+    border-radius: 2px;
+}
+
+.op-post {
+    background-color: #d6daf0;
+    border: 1px solid #b7c5d9;
+}
+
+.post-header {
+    font-size: 0.8rem;
+    border-bottom: 1px solid #b7c5d9;
+    padding-bottom: 4px;
+}
+
+.poster-name {
+    color: #117743;
+    font-weight: bold;
+}
+
+.subject {
+    color: #0f0c5d;
+    font-weight: bold;
+}
+
+.post-number, .post-date {
+    color: #444;
+}
+
+.greentext {
+    color: #789922;
+    margin-bottom: 2px;
+}
+
+.op-image-placeholder {
+    background: #b7c5d9;
+    border: 1px dashed #707070;
+    padding: 10px;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+/* Soulseek Window Styling */
+.win-card {
+    background: #c0c0c0;
+    border: 2px solid #ffffff;
+    border-right-color: #000000;
+    border-bottom-color: #000000;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.win-title-bar {
+    background: #000080;
+    color: white;
+    padding: 3px 6px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.win-body {
+    padding: 8px;
+    background: #d4d0c8;
+}
+
+.status-indicator.online {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #00ff00;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+/* Last.fm Dark Component */
+.lastfm-card {
+    background-color: #111111;
+    color: #ffffff;
+    border-left: 4px solid #d51007;
+    border-radius: 4px;
+}
+
+.lastfm-header {
+    background-color: #222222;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.album-art {
+    width: 48px;
+    height: 48px;
+    background-color: #333;
+    border: 1px solid #555;
+    background-image: linear-gradient(45deg, #222 25%, transparent 25%), linear-gradient(-45deg, #222 25%, transparent 25%);
+    background-size: 8px 8px;
+}
+
+.track-name {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.artist-name {
+    color: #aaaaaa;
+    font-size: 0.85rem;
+}
+
+/* Form & Interactive Elements */
+.chan-input {
+    background-color: #ffffff;
+    border: 1px solid #aaa;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 0.8rem;
+}
+
+.chan-btn {
+    background-color: #b7c5d9;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.chan-btn:hover {
+    background-color: #a2b4ce;
+}
+
+.skill-tag {
+    background-color: #eef2f7;
+    border: 1px solid #b7c5d9;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    color: #0f0c5d;
+}
+
+.project-entry {
+    background-color: #eef2f7;
+    border-left: 3px solid #af0a0f;
+}
