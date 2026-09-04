@@ -25,3 +25,7 @@ portfolio-fsjp/
     ├── favicon.png   # Browser tab icon (32x32 px or 64x64 px)
     ├── avatar.png    # Profile picture / avatar
     └── resume.pdf    # Downloadable CV link target
+
+
+todo
+fix favicon and avatar bro idk why its not working
